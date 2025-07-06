@@ -1,4 +1,6 @@
 import React, {useState} from "react";
+import { FaOpencart } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
 
@@ -6,11 +8,10 @@ const Navbar = () => {
     return (
         <nav className="flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 border-b border-gray-300 bg-white relative transition-all">
 
-            <a href="#">
-                <img className="h-9" src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/dummyLogo/dummyLogoColored.svg" alt="dummyLogoColored" />
-            </a>
+          <Link to='/'>
+          <h1 className="flex items-center text-4xl">DOKO <FaOpencart className="text-blue-700" /> </h1>
+      </Link>
 
-            {/* Desktop Menu */}
             <div className="hidden sm:flex items-center gap-8">
                 <a href="#">Home</a>
                 <a href="#">About</a>
