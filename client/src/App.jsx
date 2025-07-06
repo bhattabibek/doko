@@ -1,4 +1,4 @@
-
+import {Routes,Route} from 'react-router-dom';
 import './App.css'
 
 function App() {
@@ -6,7 +6,13 @@ function App() {
 
   return (
     <>
-    <h1 className='text-3xl'>DOKO</h1>
+   <div>
+    <Routes>
+      <Route path='/' element={<Home/>}/>
+      <Route path="" element={}/>
+      <Route path="" element={}/>
+    </Routes>
+   </div>
     </>
   )
 }
