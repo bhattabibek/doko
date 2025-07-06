@@ -1,4 +1,5 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
+import { dummyProducts } from "../assets/assets";
 
 export const AppContext = createContext(null);
 
@@ -6,6 +7,14 @@ const AppContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [Isseller, setIsSeller] = useState(null);
   const [showUserLogin, setShowUserLogin] = useState(false);
+  const [products,SetProducts] = useState([]);
+
+  const fetchProductdata = async () => {
+  SetProducts(dummyProducts)
+  }
+useEffect(()=>{
+fetchProductdata();
+},[products])
 
   const value = {
     user,
@@ -14,6 +23,7 @@ const AppContextProvider = ({ children }) => {
     setIsSeller,
     showUserLogin,
     setShowUserLogin,
+    products,
   };
 
   return (
