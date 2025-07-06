@@ -22,7 +22,7 @@ function App() {
       {/* Show Auth modal if showUserLogin is true */}
       {showUserLogin && <Auth />}
 
-      <div>
+      <div className='px-6 md:16 lgL:24 xl:px-32'>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
