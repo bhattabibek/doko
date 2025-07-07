@@ -10,14 +10,14 @@ const AppContextProvider = ({ children }) => {
   const [showUserLogin, setShowUserLogin] = useState(false);
   const [products, setProducts] = useState([]);
   const [cartItems, setCartItems] = useState({});
-  const [searchQuery,setSearchQUery] = useState({});
+  const [searchQuery, setSearchQuery] = useState("");
 
-  // Fetch products from dummy data
+  // ✅ Fetch products from dummy data
   const fetchProductData = async () => {
     setProducts(dummyProducts);
   };
 
-  // Add item to cart
+  // ✅ Add item to cart
   const addToCart = (itemId) => {
     const cartData = structuredClone(cartItems);
     if (cartData[itemId]) {
@@ -29,7 +29,7 @@ const AppContextProvider = ({ children }) => {
     toast.success("Added to cart");
   };
 
-  // Update item quantity in cart
+  // ✅ Update item quantity
   const updateCartItem = (itemId, quantity) => {
     const cartData = structuredClone(cartItems);
     cartData[itemId] = quantity;
@@ -37,7 +37,7 @@ const AppContextProvider = ({ children }) => {
     toast.success("Cart updated");
   };
 
-  // Remove item from cart
+  // ✅ Remove item from cart
   const removeFromCart = (itemId) => {
     const cartData = structuredClone(cartItems);
     if (cartData[itemId]) {
@@ -50,7 +50,7 @@ const AppContextProvider = ({ children }) => {
     }
   };
 
-  // Total item count in cart
+  // ✅ Total cart item count
   const cartCount = () => {
     let totalCount = 0;
     for (const item in cartItems) {
@@ -59,7 +59,7 @@ const AppContextProvider = ({ children }) => {
     return totalCount;
   };
 
-  // Total cart amount calculation
+  // ✅ Total cart amount
   const totalCartAmount = () => {
     let totalAmount = 0;
     for (const item in cartItems) {
@@ -68,13 +68,29 @@ const AppContextProvider = ({ children }) => {
         totalAmount += cartItems[item] * itemInfo.offerPrice;
       }
     }
-    return Math.floor(totalAmount * 100) / 100; // rounds to 2 decimal places
+    return Math.floor(totalAmount * 100) / 100;
   };
 
+  // ✅ Load cart from localStorage on mount
   useEffect(() => {
+    const storedCart = localStorage.getItem("cartItems");
+    if (storedCart) {
+      try {
+        setCartItems(JSON.parse(storedCart));
+      } catch (error) {
+        console.error("Failed to parse cart from localStorage:", error);
+      }
+    }
+
     fetchProductData();
   }, []);
 
+  // ✅ Save cart to localStorage when cartItems changes
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
+
+  // ✅ Global context value
   const value = {
     user,
     setUser,
@@ -90,7 +106,7 @@ const AppContextProvider = ({ children }) => {
     cartCount,
     totalCartAmount,
     searchQuery,
-    setSearchQUery,
+    setSearchQuery,
   };
 
   return (

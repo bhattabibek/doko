@@ -219,6 +219,16 @@ export const dummyProducts = [
     inStock: true,
   },
   {
+    
+  _id: "carrot123",
+  name: "Carrot 1kg",
+  category: "Vegetables",
+  price: 40,
+  offerPrice: 35,
+  image: "carrot.jpg"
+},
+  
+  {
     _id: "gd47g34h",
     name: "Tomato 1 kg",
     category: "Vegetables",

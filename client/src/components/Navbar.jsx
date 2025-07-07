@@ -1,18 +1,21 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AppContext} from "../context/AppContext";
+
 import { assets } from "../assets/assets";
 import toast from "react-hot-toast";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [searchQuery,setSearchQuery] = useState('');
+  const [localSearch,setLocalSearch] = useState('')
+  
   const {
     user,
     setUser,
-    showUserLogin,
+   
     setShowUserLogin,
     navigate,
-    searchQuery,
-    setSearchQuery,
+   
     cartCount,
     axios,
   } = useContext(AppContext);
@@ -32,6 +35,9 @@ const Navbar = () => {
       toast.error(error.message);
     }
   };
+  const handleSearchClick = ()=>{
+    setSearchQuery(localSearch)
+  }
   useEffect(() => {
     if (searchQuery.length > 0) {
       navigate("/products");
@@ -49,12 +55,14 @@ const Navbar = () => {
         <Link to={"/products"}>All Products</Link>
 
         <div className="hidden lg:flex items-center text-sm gap-2 border border-gray-300 px-3 rounded-full">
-          <input
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="py-1.5 w-full bg-transparent outline-none placeholder-gray-500"
-            type="text"
-            placeholder="Search products"
-          />
+       <input
+  onChange={(e) => setSearchQuery(e.target.value)}
+  className="py-1.5 w-full bg-transparent outline-none placeholder-gray-500"
+  type="text"
+  value={searchQuery}
+  placeholder="Search products"
+/>
+          <button onClick={handleSearchClick}>Search</button>
           <svg
             width="16"
             height="16"

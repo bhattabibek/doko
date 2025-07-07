@@ -25,7 +25,7 @@ const Hero = () => {
         <h1 className="text-3xl md:text-4xl font-bold text-center md:text-left max-w-72 md:max-w-80 leading-tight lg:leading-[4rem]">
           TRUST US FOR ALL ITEMS
         </h1>
-        <div className='fex items-center justify-center md:justify-start mt-4'>
+        <div className='flex items-center justify-center md:justify-start mt-4'>
 <Link to="/products" className='flex group items-center px-7 rounded bg-blue-700 text-white p-3'>Shop Now</Link>
         </div>
       </div>
