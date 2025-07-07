@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [searchQuery,setSearchQuery] = useState('');
-  const [localSearch,setLocalSearch] = useState('')
+  
   
   const {
     user,
