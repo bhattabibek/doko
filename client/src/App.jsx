@@ -10,6 +10,7 @@ import Navbar from './components/Navbar';
 import MyOrders from './components/MyOrders';
 import Auth from './models/Auth';
 import Footer from './components/Footer';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   const { Isseller, showUserLogin } = useContext(AppContext);
@@ -22,7 +23,7 @@ function App() {
       
       {/* Show Auth modal if showUserLogin is true */}
       {showUserLogin && <Auth />}
-
+    <Toaster/>
       <div className='px-6 md:16 lgL:24 xl:px-32'>
         <Routes>
           <Route path="/" element={<Home />} />
