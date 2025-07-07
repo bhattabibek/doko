@@ -10,6 +10,7 @@ const AppContextProvider = ({ children }) => {
   const [showUserLogin, setShowUserLogin] = useState(false);
   const [products, setProducts] = useState([]);
   const [cartItems, setCartItems] = useState({});
+  const [searchQuery,setSearchQUery] = useState({});
 
   // Fetch products from dummy data
   const fetchProductData = async () => {
@@ -88,6 +89,8 @@ const AppContextProvider = ({ children }) => {
     removeFromCart,
     cartCount,
     totalCartAmount,
+    searchQuery,
+    setSearchQUery,
   };
 
   return (
