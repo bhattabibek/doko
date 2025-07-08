@@ -27,7 +27,7 @@ function App() {
       <div className='px-6 md:16 lgL:24 xl:px-32'>
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/cart" element={<Cart />} /> */}
+          <Route path="/cart" element={<Cart />} />
           <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/products" element={<Products />} />
           <Route path="/my-orders" element={<MyOrders />} />

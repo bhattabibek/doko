@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AppContext} from "../context/AppContext";
+import { useNavigate } from "react-router-dom";
 
 import { assets } from "../assets/assets";
 import toast from "react-hot-toast";
@@ -8,7 +9,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [searchQuery,setSearchQuery] = useState('');
   
-  
+   const routerNavigate = useNavigate();
   const {
     user,
     setUser,
@@ -89,7 +90,7 @@ const Navbar = () => {
         </div>
 
         <div
-          onClick={() => navigate("/cart")}
+          onClick={() => routerNavigate("/cart")}
           className="relative cursor-pointer"
         >
           <svg
