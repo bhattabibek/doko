@@ -42,6 +42,13 @@ A full-stack e-commerce application built using the MERN stack (MongoDB, Express
 - bcrypt.js for password hashing
 
 ---
+**Screenshots**
+<img width="1115" alt="Screenshot 2025-07-09 at 17 23 25" src="https://github.com/user-attachments/assets/f86e05e8-ff31-4692-8b73-51a7bc274f82" />
+<img width="1156" alt="Screenshot 2025-07-09 at 17 23 37" src="https://github.com/user-attachments/assets/9e59332a-6112-4ca1-b25c-52a3cf0d4002" />
+<img width="1274" alt="Screenshot 2025-07-09 at 17 23 50" src="https://github.com/user-attachments/assets/b4744df1-3b65-45c7-827a-9b6ebff3ae9f" />
+<img width="1169" alt="Screenshot 2025-07-09 at 17 24 02" src="https://github.com/user-attachments/assets/bb5d0d56-a1f2-4648-b1b4-055da35e6c51" />
+<img width="1220" alt="Screenshot 2025-07-09 at 17 24 24" src="https://github.com/user-attachments/assets/31d6b7e7-c77a-4b69-b89f-3eeabe8b02b5" />
+
 
 ⚙️ **Setup Instructions**
 
